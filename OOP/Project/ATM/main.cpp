@@ -30,9 +30,9 @@ int main()
 
 
 			case 2: {
-				Client user = atm.accessUser();
+				Client* user = atm.accessUser();
 
-				if (atm.pinIsCorrect(user))
+				if (atm.pinIsCorrect(*user))
 				{
 
 					std::cout << "Optiuni:" << std::endl;
@@ -47,7 +47,7 @@ int main()
 					switch (choice)
 					{
 					case 1:
-						atm.depositMoney(user);
+						atm.depositMoney(*user);
 						break;
 
 
@@ -57,7 +57,7 @@ int main()
 						std::cout << "Introduceti suma dorita";
 						std::cin >> amount;
 
-						atm.withdrawMoney(user, amount);
+						atm.withdrawMoney(*user, amount);
 						break;
 						}
 
@@ -68,13 +68,13 @@ int main()
 						std::cout << "Introduceti suma dorita pentru transfer";
 						std::cin >> amount;
 
-						atm.transferMoney(user, atm.accessUser(), amount);
+						atm.transferMoney(*user, *atm.accessUser(), amount);
 						break;
 						}
 
 
 					case 4:
-						std::cout << "Soldul dvs. este: " << atm.balanceInquiry(user) << std::endl;
+						std::cout << "Soldul dvs. este: " << atm.balanceInquiry(*user) << std::endl;
 						break;
 
 

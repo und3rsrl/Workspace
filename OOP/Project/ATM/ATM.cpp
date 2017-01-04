@@ -17,7 +17,7 @@ void ATM::createUser()
 	members.push_back(temp);
 }
 
-Client ATM::accessUser()
+Client* ATM::accessUser()
 {	
 	if (members.size() == 0) {
 		throw "Nu exista niciun membru.";
@@ -30,7 +30,7 @@ Client ATM::accessUser()
 	int choice;
 	std::cout << "Alegere: "; std::cin >> choice;
 
-	return members[choice - 1];
+	return &members[choice - 1];
 }
 
 bool ATM::pinIsCorrect(Client &user)
