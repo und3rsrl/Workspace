@@ -1,0 +1,26 @@
+Intr-un serviciu de trimitere de emailuri, pentru a se asigura o trimitere optima a acestora trebuie implementat un algoritm care sa tina cont atat de ordinea de aparitie a lor cat si de prioritate. Algoritmul scaneaza la fiecare x minute, coada de emailuri, in ordinea aparitiei lor, le extrage pe primele k si le adauga intr-o lista de trimitere care este ordonata dupa prioritate. Daca un destinatar este deja in aceasta lista, atunci email-ul respectiv se adauga la coada listei de procesare, pentru a evita trimiterea mai multor emailuri catre acelasi destinar intr-un interval scurt de timp. Cand lista de emailuri ajunge la l elemente atunci acestea sunt trimise imediat iar lista este golita. Se doreste implementarea unui algoritm care sa afiseze continutul cozii de procesare cat si a listei de trimitere la momentul de timp t. 
+Start
+i = 0 isUp = 0
+i < N
+Action <> -1 Yes
+isUp = 0 Yes
+Add X to Books at the beginning
+No
+Add X to Books at the end
+No
+isUp = 1 – isUp
+i = i + 1
+isUp = 0
+Output books from start to end
+Output books from end to start
+End
+NetRom  STL Competency Test 23.11.2016 
+ 
+STL Competency Test– Sesiunea 1  Page 3 of 3  
+ 
+6. Descriere input Inputul este citit dintr-un fisier de intrare sub forma urmatoare: ? Pe prima linie: x (numarul de minute la care se scaneaza coada de emailuri) ? Pe linia 2: k (numarul de emailuri extrase din coada la fiecare x minute) ? Pe linia 3: l (numarul de elemente din lista de trimitere) ? Pe linia 4: t (momentul de timp la care se doreste aflarea continutului cozii de procesare si a listei de trimitere) ? Pe linia 5: n (numarul de emailuri) ? Pe liniile 6 pana la 6+n, emailurile cu urmatoarea structura Ordine Subiect destinatar prioritate  unde  - ordine: este un intreg reprezentand ordinea aparitiei emailului (in fisierul de input emailurile nu sunt date in ordinea aparitiei). Nu exista 2 emailuri cu aceeasi ordine. - subiect: este subiectul emailului, maxim 255 de caractere, fara spatii - destinatar: destinatarul emailului, maxim 255 de caractere, fara spatii - prioritate: un intreg reprezentand prioritatea emailului, de la 1-999. Nu exista 2 emailuri cu aceeasi prioritate. -  
+7. Descriere iesire Programul trebuie sa afiseze in consola urmatoarele: Coada de procesare: de la primul element la ultimul element din coada (este suficienta afisarea subiectului fiecarui email) Lista de trimitere: de la primul la ultimul element in ordinea prioritatii (este suficienta afisarea subiectului fiecarui email) 
+8. Exemplu: 
+8.1. Input 5 3 5 20 10 7 email4 dest4@netrom.ro 7 1 email1 dest1@netrom.ro 10 16 email7 dest3@netrom.ro 20 10 email5 dest1@netrom.ro  12 4 email2 dest2@netrom.ro 11 5 email3 dest3@netrom.ro 15 22 email8 dest7@netrom.ro 22 30 email10 dest2@netrom.ro 4 14 email6 dest5@netrom.ro 2 25 email9 dest8@netorm.ro 23 
+ 
+8.2. Output:  Coada de procesare: email10, email5, Lista de trimitere: email7, email8, email9, 
