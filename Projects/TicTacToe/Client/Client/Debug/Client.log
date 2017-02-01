@@ -1,0 +1,4 @@
+﻿  Multiplayer.cpp
+d:\workspace\tictactoe_project\client\client\multiplayer.cpp(68): warning C4715: 'Multiplayer::Disconnect': not all control paths return a value
+  Client.vcxproj -> D:\Workspace\TicTacToe_Project\Client\Debug\Client.exe
+  Client.vcxproj -> D:\Workspace\TicTacToe_Project\Client\Debug\Client.pdb (Full PDB)
